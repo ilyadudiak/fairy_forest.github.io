@@ -1,0 +1,27 @@
+Нужно использовать переменную индекс для того чтобы значения изменялись взависимости от ширины и высоты окна браузера, вот как создать:
+--index: calc(1vw + 1vh);
+А дальше использовать вместе с calc()если нужно, примерно вот так: 
+font-size: calc(var(--index) * 1.25);
+
+плавный скролл только jsap (вот эти штуки внизу это названия + подключения)
+для нормальной работы нужен wrapper внутри которого будет container для этого нужно подстроить так свой html код
+
+ <script src="libs/gsap/gsap.min.js" defer></script>
+    <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+
+     gsap.registerPlugin(ScrollTrigger, ScrollSmoother) - это в файл js для подключения
+
+      ScrollSmoother.create({
+    wrapper: '.wrapper',
+    content: '.content'
+ }) --это для того чтобы плавный скролл начал работать  качестве значений для wrapper и content можно использовать любые имена классов, к которым надо применить данный скролл
+
+
+
+
+
+
+ WILL CHANGE
+ will change нужен для того чтобы придать какому то свойству особое значение для бразузера(Например чтобы картинки хорошо грузились, чтобы не глючила анимация и transition итд.)
+ обязательно к использованию!!!
